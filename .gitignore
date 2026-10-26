@@ -1,0 +1,6 @@
+ref/
+gen/
+vid/
+shots/
+shot.py
+.DS_Store
