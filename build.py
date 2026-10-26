@@ -9,6 +9,7 @@ v = hashlib.md5(css.encode()).hexdigest()[:8]
 for old in glob.glob(f'{ROOT}/style-*.css'): os.remove(old)
 open(f'{ROOT}/style-{v}.css', 'w').write(css)
 html = open(f'{ROOT}/src/index.html').read().replace('ASSETS/', BASE + 'assets/').replace('STYLE', f'{BASE}style-{v}.css')
+html = html.encode('ascii', 'xmlcharrefreplace').decode()  # niente caratteri non ASCII per l'importer CC
 assert not re.search(r'="[^"]*<[^"]*"', html), "'<' dentro un attributo"
 open(f'{ROOT}/index.html', 'w').write(html)
 # anteprima locale con percorsi relativi
