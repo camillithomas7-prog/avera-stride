@@ -260,3 +260,8 @@ ul{padding:0;list-style:none}
 
 .aw-tc{text-align:center}
 .aw-ben-in>img{background:#fff}
+
+/* CC avvolge i video in div.cc-video-wrapper: wrapper e video riempiono il box */
+.aw-frame,.aw-feat-media{position:relative}
+.aw-frame video,.aw-frame .cc-video-wrapper,.aw-feat-media video,.aw-feat-media .cc-video-wrapper{position:absolute;top:0;left:0;width:100%;height:100%;max-width:none;margin:0;padding:0}
+.aw-frame video,.aw-feat-media video{object-fit:cover}
